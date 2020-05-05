@@ -3,5 +3,11 @@
  Checkout {% endblock %}
  {% block body %}
  <div style="font-weight: bolder;text-align: center;"><h1 class="display-4">Checkout</h1></div>
-  {{ id }}
+  <div>
+      {% for items in cart %}
+         <li>{{ items.pizza_id }} - {{ cart_info.items.price }}</li>
+
+      {% endfor %} 
+  </div>
+  {{ result }}
   {% endblock %}
