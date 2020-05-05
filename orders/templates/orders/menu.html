@@ -1,0 +1,111 @@
+{% extends "orders/base.html" %}
+{% block title %}
+MENU {% endblock %}
+{% block body %}
+<div style="font-weight: bolder;text-align: center;"><h1 class="display-1">Menu</h1></div>
+<div style="font-size: larger;font-weight: bold;">Available Combos</div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm" >
+        <div><div style="font-size: large;font-weight: bolder;">Small ones</div>
+        {% for pizzas in small %}
+         <li>{{ pizzas }}- ${{ pizzas.price }} <a href="/checkout/Small/{{ pizzas.id }}"><button>Add to cart</button></a></li>
+        {% empty %}
+        {% endfor %}
+      </div>       
+      </div>
+      <div class="col-sm">
+        <div ><div style="font-size: large;font-weight: bolder;">Large ones</div>
+          {% for pizzas in large %}
+           <li>{{ pizzas }}- ${{ pizzas.price }}<a href="/checkout/Large/{{ pizzas.id }}"><button>Add to cart</button></a></li>
+         {% empty %}
+         {% endfor %}
+      </div>      
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div style="text-align: center;"><div style="font-weight: bolder;font-size: larger;">Toppings</div>
+             {% for top in topping %}
+               <li>{{ top }}</li>
+              {% empty %}
+              {% endfor %}         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+          <div>
+              <div style="font-weight: bolder;font-size: larger;">Subs-Small ones</div>
+              {% for subs in subs_s %}
+                 <li>
+                     {{ subs }} = ${{ subs.price }} <a href="/checkout/Subs_small/{{ subs.id }}"><button>Add to cart</button></a>
+                 </li>
+              {% endfor  %}   
+
+          </div>
+        </div>
+      <div class="col-sm">
+          <div>
+            <div style="font-weight: bolder;font-size: larger;">Subs-Large ones</div>
+            {% for subs in subs_l %}
+               <li>
+                   {{ subs }} = ${{ subs.price }} <a href="/checkout/Subs_large/{{ subs.id }}"><button>Add to cart</button></a>
+               </li>
+            {% endfor %}   
+          </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div>
+            <div style="font-weight: bolder;font-size: larger;">Pasta</div>
+            {% for pasta in pasta %}
+               <li>
+                   {{ pasta }} = ${{ pasta.price }} <a href="/checkout/Pasta/{{ pasta.id }}"><button>Add to cart</button></a>
+               </li>
+            {% endfor %}   
+        </div>
+      </div>
+      <div class="col-sm">
+        <div>
+            <div style="font-weight: bolder;font-size: larger;">Salads</div>
+            {% for salad in salads %}
+               <li>
+                   {{ salad }} = ${{ salad.price }} <a href="/checkout/Salads/{{ salad.id }}"><button>Add to cart</button></a>
+               </li>
+            {% endfor %}   
+        </div>
+      </div>
+      <div class="col-sm">
+        
+        <div>
+            <div style="font-weight: bolder;font-size: larger;">Dinner</div>
+            {% for dinner in dinner %}
+               <li>
+                   {{ dinner }} = ${{ dinner.price }} <a href="/checkout/Dinner/{{ dinner.id }}"><button>Add to cart</button></a>
+               </li>
+            {% endfor %}   
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="font-weight: bolder;text-align: center;"><h1 class="display-4">Thank You for Shoping</h1></div>
+  {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
