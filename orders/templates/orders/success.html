@@ -1,0 +1,9 @@
+{% extends "orders/base.html" %}
+{% block title %}
+  Success
+  {% endblock %}
+  {% block body %}
+  <div style="font-weight: bolder;padding-left: 2cm;"><h1 class="display-1">Your Order has been  Placed</h1></div>
+  <div style="font-weight: bolder;padding-left: 2cm;"><h1 class="display-4">{{ msg }}</h1></div>
+  <div style="text-align: center;padding-top: 4cm;"><a href="/"><button>Continue Shopping</button></a></div>
+ {% endblock %}

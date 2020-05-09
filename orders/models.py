@@ -3,21 +3,21 @@ from django.db import models
 # Create your models here.
 class Small(models.Model):
     id = models.IntegerField(primary_key=True)
-    kind = models.CharField(max_length=40)    
+    name = models.CharField(max_length=40)    
     topping = models.CharField(max_length=50)
     price = models.IntegerField()
     
     def __str__(self):
-        return f" A Small {self.kind} pizza  with {self.topping} topping =${self.price}"
+        return f" A Small {self.name} pizza  with {self.topping} topping =${self.price}"
 
 class Large(models.Model):
     id = models.IntegerField(primary_key=True)
-    kind = models.CharField(max_length=40)    
+    name = models.CharField(max_length=40)    
     topping = models.CharField(max_length=50)
     price = models.IntegerField()
 
     def __str__(self):
-        return f" A Large {self.kind} pizza  with {self.topping} topping"
+        return f" A Large {self.name} pizza  with {self.topping} topping"
 
 class Topping(models.Model):
     id= models.IntegerField(primary_key=True)
@@ -59,4 +59,6 @@ class Dinner(models.Model):
     price = models.IntegerField()
     def __str__(self):
         return f"{self.name}"
+
+
 

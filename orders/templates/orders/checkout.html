@@ -3,11 +3,19 @@
  Checkout {% endblock %}
  {% block body %}
  <div style="font-weight: bolder;text-align: center;"><h1 class="display-4">Checkout</h1></div>
-  <div>
+  
+ <div style="text-align: center;padding-top: 1cm;">  
       {% for items in cart %}
-         <li>{{ items.pizza_id }} - {{ cart_info.items.price }}</li>
+            <li>
+             {{ items.name }}  {{ items.topping }} -    ${{ items.price}}                      
+            </li>      
+      {% endfor %}     
+  </div>  
+  <div style="text-align: center;">Total={{ total }}  </div>
+  <div style="text-align: center;"><a href="/success" ><button>Order Now</button></a></div>
+  <div style="text-align: center; padding-top: 2cm;"><a href="/" ><button>Go back</button></a></div>
+  
 
-      {% endfor %} 
-  </div>
-  {{ result }}
+  
   {% endblock %}
+  

@@ -1,0 +1,13 @@
+{% extends 'orders/base.html' %}
+
+{% block body %}
+<div style="font-weight: bolder;padding-left: 3.8cm;padding-top: 1cm;"><h1 class="display-4">Login </h1></div>
+<div class="container" style="padding-top: 1cm;padding-left: 1cm;">
+        <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+            <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
+        </form>
+        Don't have an account? <a href="/register" target="blank"><strong>register here</strong></a>!
+    </div>
+{% endblock %}

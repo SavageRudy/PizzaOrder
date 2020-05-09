@@ -1,0 +1,19 @@
+{% extends "orders/base.html" %}
+
+{% block title %}Create an Account{% endblock %}
+
+
+{% block body %}
+<div style="font-weight: bolder;padding-left: 3cm;"><h1 class="display-4">Register</h1></div>
+<div class="container"> 
+   <div style="padding-top: 1cm;padding-left: 3cm;">
+    <br>
+    <form method="POST">
+	{% csrf_token %}
+      {{form.as_ul}}
+   
+   <button type="submit" class="btn btn-success">Register</button>
+    </form>
+   </div>
+ </div>  
+{% endblock %}

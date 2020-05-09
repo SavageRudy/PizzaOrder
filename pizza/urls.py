@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+
 urlpatterns = [
     path("", include("orders.urls")),
     path("admin/", admin.site.urls),
     path("checkout/<food>/<int:pizza_id>", include("orders.urls")),
+    path("order", include("orders.urls")),
+    path("register", include("orders.urls")),
+    path("login", include("orders.urls")),
+    path("logout", include("orders.urls")),
 ]

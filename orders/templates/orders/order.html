@@ -1,0 +1,12 @@
+{% extends "orders/base.html" %}
+{% block title %}
+ Order
+ {% endblock %}
+ {% block body %}
+ <div style="font-weight: bolder;text-align: center;"><h1 class="display-4">Orders Placed</h1></div>
+   <div style="text-align: center;">
+    {% for item in order %}
+     <li>{{ item.id }}--{{ item.name }}--{{ item.topping }} --- {{ customer.value }}</li>
+   {% endfor %} 
+   </div>
+   {% endblock %}  
